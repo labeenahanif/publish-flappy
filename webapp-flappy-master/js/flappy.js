@@ -66,6 +66,9 @@ function create() {
  */
 function update() {
   game.physics.arcade.overlap(player, pipes, gameOver);
+  if(player.body.y<0 || player.body.y>400){
+    gameOver();
+  }
 }
 
 function gameOver() {
