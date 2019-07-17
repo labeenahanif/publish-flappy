@@ -1,10 +1,13 @@
+//var highScore = 0
+//var scoreEntry;
+
 jQuery("#credits").on("click",function() {
     var message = "created by labeena hanif :)";
       alert(message);
   }
 )
 jQuery("#help").on("click",function() {
-    var message = "if pressing spacebar starts to move the page, refresh the page to stop it.";
+    var message = "if the bird falls and disappears, refresh the page to restart";
     alert(message);
   }
 )
@@ -22,8 +25,14 @@ jQuery("#scores").on("click",function() {
 )
 
 jQuery("#bird").on("click",function() {
-  var name = prompt("what is your name?");
-  var message = "you have found The Bird, " +name+ ". you are now initiated. long live the flappy king and long may he flap.";
-  alert(message);
-}
+    var message = "you have found The Bird. you are now initiated. long live the flappy king and long may he flap.";
+    alert(message);
+  }
 )
+
+//function registerScore(score) {
+  //if (score > highscore) {
+    //highScore = scoreEntry = "<li>" +name+ ":" + score.toString()+ "</li>";
+    //var name = prompt("what is your name?");
+//  }
+//}
