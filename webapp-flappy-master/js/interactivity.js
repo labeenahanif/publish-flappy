@@ -4,7 +4,7 @@ jQuery("#credits").on("click",function() {
   }
 )
 jQuery("#help").on("click",function() {
-    var message = "if the bird falls and disappears, refresh the page to restart";
+    var message = "if pressing spacebar starts to move the page, refresh the page to stop it.";
     alert(message);
   }
 )
