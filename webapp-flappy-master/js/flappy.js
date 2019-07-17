@@ -13,6 +13,11 @@ var score = 0;
 var labelscore;
 var player;
 var pipes = [];
+var blockHeight = 50;
+var gapSize = 100;
+var gapMargin = 50;
+var width = 790;
+var height = 400;
 
 /*
  * Loads all resources for the game and gives them names.
@@ -72,7 +77,8 @@ function update() {
 }
 
 function gameOver() {
- location.reload();
+  location.reload();
+  //registerScore(score);
 }
 //this function makes images appear where you click
 //this function is called when the spacebar is played to play a sound
@@ -86,11 +92,14 @@ function changeScore() {
 
 function generatePipe() {
 
-  var gapStart = game.rnd.integerInRange(1,5)
-  for(var count = 0; count < 8; count += 1){
-    if(count != gapStart && count!= gapStart+1){addPipeBlock(750, count * 50);
-  }
+  var gapStart = game.rnd.integerInRange(gapMargin,height-gapSize-gapMargin);
+  for(var y = gapStart; y > 0; y-= blockHeight){
+    addPipeBlock(width, y-blockHeight);
     }
+    for(var y = gapStart + gapSize; y < height; y+= blockHeight) {
+      addPipeBlock(width,y)
+    }
+
 }
 
 function addPipeBlock(x,y) {
